@@ -158,6 +158,52 @@ const repeatString = (str, num) => {
 
     // return str.repeat(num)
 }       
+
 // console.log(repeatString("Hello There ", 10));
 
 
+                    // Truncate a String
+
+const truncateString = (str, num) => {
+    var truncatedString = "";
+    
+    var reqStrLength = num - 3;
+    var truncateStr = str.substr(0, reqStrLength) + "...";
+    
+    truncatedString += truncateStr;
+  
+    console.log(truncatedString);
+}           
+  
+// truncateString("Programming is taxing but well worth it !!", 20);
+
+
+                    // Chunk Array into Groups
+
+const arrTo2dArr = (arr, chunkSize) => {
+    var nestedArr = [];
+    
+    for (var i = 0; i < arr.length; i += chunkSize) {
+        const chunk = arr.slice(i, i + chunkSize);
+        nestedArr.push(chunk);
+    }
+    console.log(arguments.length);
+
+    return nestedArr;
+}
+
+// console.log(arrTo2dArr(["a", "b", "c", "d", "e", "f"], 3));
+
+
+                    // Slashing an array
+
+const slashArr = (arr, slashSize) => {
+    var resArr = [];
+
+    const slicedArr = arr.slice(0, slashSize);
+    resArr.push(slicedArr);
+
+    return resArr;
+}      
+
+console.log(slashArr([20, "M1", 2022, "Air"], 2));
