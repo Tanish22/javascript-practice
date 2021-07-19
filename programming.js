@@ -279,10 +279,10 @@ const getIndexToInsert = (arr, num) => {
  const rot13 = (str) => {
     var alphabets = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
     var alphabetsArr = alphabets.split("")
-    
-    let decodedCipher = "";
-
+      
     for (let i = 0; i < str.length; i++) {  
+        var decodedCipher = "";
+
         var char = str[i];
         var isChar = alphabetsArr.includes(char);
 
@@ -300,4 +300,26 @@ const getIndexToInsert = (arr, num) => {
     return decodedCipher;
 }   
 
-console.log(rot13("SERR PBQR PNZC"));
+// console.log(rot13("SERR PBQR PNZC"));
+
+
+                    // sum all numbers in the range 
+
+const sumAllNosInRange = (arr) => {
+    let sum = 0;
+
+    if (arr[0] < arr[1]) {
+        for (let i = arr[0]; i <= arr[1]; i++) {
+            sum += i;
+        }
+    }
+    else {
+        for (let i = arr[0]; i >= arr[1]; i--) {
+            sum += i;
+        }
+    }
+    
+    return sum;
+}                
+
+console.log(sumAllNosInRange([4, 1]));
