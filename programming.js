@@ -119,6 +119,7 @@ const largestNo = (arr2d) => {
 
         // confirm the ending
 
+// str should end with the word thats target (2nd arg)        
 const confirmEnding = (str, target) => {
     var strToArr = str.split(" ");
     var strEnd = strToArr.slice(-1);
@@ -133,7 +134,8 @@ const confirmEnding = (str, target) => {
 
 
         // repeat string num (parameter) times
-
+    
+// repeat the str arg as many times specified in the num (2nd arg)
 const repeatString = (str, num) => {
     // var repeatedStr = "";
 
@@ -164,6 +166,7 @@ const repeatString = (str, num) => {
 
                     // Truncate a String
 
+// truncate the str according to the 2nd arg minus 3 reserved for "..."                    
 const truncateString = (str, num) => {
     var truncatedString = "";
     
@@ -180,6 +183,7 @@ const truncateString = (str, num) => {
 
                     // Chunk Array into Groups
 
+// 1st arg (arr) divided into chunks as per the chunksize (2nd arg)                    
 const arrTo2dArr = (arr, chunkSize) => {
     var nestedArr = [];
     
@@ -197,6 +201,7 @@ const arrTo2dArr = (arr, chunkSize) => {
 
                     // Slashing an array
 
+// slashing the array according to the 2nd arg                    
 const slashArr = (arr, slashSize) => {
     var resArr = [];
 
@@ -206,4 +211,93 @@ const slashArr = (arr, slashSize) => {
     return resArr;
 }      
 
-console.log(slashArr([20, "M1", 2022, "Air"], 2));
+// console.log(slashArr([20, "M1", 2022, "Air"], 2));
+
+
+                    // Mutations
+
+// 1st array element should have all the elements of the 2nd element (array is passed as arg)
+const mutation = (arr) => {
+    var firstElem = arr[0];
+    var secondElem = arr[1]
+
+    if (firstElem.indexOf(secondElem) === -1){
+        return false;
+    }
+    return true;
+
+
+    // var firstElem = arr[0].toLowerCase();
+    // var secondElem = arr[1].toLowerCase();
+
+    // if (firstElem.includes(secondElem)) {
+    //     return true;
+    // }
+    // else{
+    //     return false;
+    // }
+}           
+
+// console.log(mutation(["racecar", "tar"]));
+
+
+                    // remove falsy values from an array
+
+const removeFalsy = (arr) => {
+    var truthyArr = []
+
+    truthyArr = arr.filter((truthies) => {  // filter returns only truthy values
+        return truthies;
+    })
+    return truthyArr;
+}   
+
+// console.log(removeFalsy([2, "hello", false, "", '', "world", undefined, null, "racecar"]));
+
+
+                   // where do i belong
+
+// placing the 2nd & subsequent arguments in the proper order in the 1st arg (arr)                   
+const getIndexToInsert = (arr, num) => {
+    let sortedArr = arr.sort();
+    var resArr = [];
+    
+    for (let i = 0; i < sortedArr.length; i++) {
+
+        if (num < sortedArr[i]) {
+            return i;
+        }
+    }
+    return sortedArr.length;;
+}
+
+// console.log(getIndexToInsert([18, 10, 22, 2, 44], 1));
+
+
+                    // Caesar's Cipher
+
+ const rot13 = (str) => {
+    var alphabets = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    var alphabetsArr = alphabets.split("")
+    
+    let decodedCipher = "";
+
+    for (let i = 0; i < str.length; i++) {  
+        var char = str[i];
+        var isChar = alphabetsArr.includes(char);
+
+        if(!isChar) {
+            decodedCipher += char;
+        }
+        else {
+            var charIndex = alphabetsArr.findIndex((alph) => {
+                alph == char;
+            })   
+            decodedCipher += alphabetsArr[charIndex + 13] || alphabetsArr[charIndex - 13] 
+        }
+    }
+        
+    return decodedCipher;
+}   
+
+console.log(rot13("SERR PBQR PNZC"));
