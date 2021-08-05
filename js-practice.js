@@ -1,3 +1,5 @@
+                                // FREE CODE CAMP
+
 // reversing a string
 
 const reverseString = (str) => {
@@ -322,4 +324,4 @@ const sumAllNosInRange = (arr) => {
     return sum;
 }                
 
-console.log(sumAllNosInRange([4, 1]));
+console.log(sumAllNosInRange([10, 5]));
