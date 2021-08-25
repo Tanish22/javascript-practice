@@ -162,6 +162,85 @@ const isAscOrDesc = (arr) => {
     return arr;
 }                    
 
-console.log(isAscOrDesc([200, 4, 56, 22]));
+// console.log(isAscOrDesc([200, 4, 56, 22]));
 
 
+                    // largest even no from arr of integers
+
+const largestEvenNumber = (arr) => {
+    var largestEvenNo = Math.max(...arr.filter((no) => no % 2 === 0));
+    console.log(largestEvenNo);
+}            
+
+// console.log(largestEvenNumber([200, 4, 56, 22, 123, 34, 222, 444, 31]));
+
+
+                    // replace 1st digit in a string with $
+
+const replaceWith$ = (str) => {
+   str.replace(/[^0-9]/, "$");
+   return str;
+}                    
+
+// console.log(replaceWith$("bklbdd333dl3iu33h2eghjvjed"));
+
+
+                    // sum of all array elements
+
+const sumArrElem = (arr) => {
+    var sumOfArrElem = 0;
+    var arrSum = arr.forEach((num) => sumOfArrElem += num);
+
+    return sumOfArrElem;
+}   
+
+// console.log(sumArrElem([20, 200, 2000]));
+
+
+const isLeapYear = (year) => {
+    if (year % 400 === 0 && year % 100 === 0) {
+        return "The year is a leap year !!"
+    }
+    else return "The year is not a leap year !!"
+}
+
+// console.log(isLeapYear(2001));
+
+
+                    // compare 2 objects (keys) for similarity
+
+const object1 = {
+    name: "p1",
+    power: 903,
+    type: "hybrid"
+}        
+
+const object2 = {
+    name: "laferrari",
+    power: 950
+}   
+
+const object3 = {
+    name: "evija",
+    power: 2000,
+    type: "electric"
+}  
+
+const objComparo = (obj1, obj2) => {
+    // var obj1Keys = Object.keys(obj1);
+    // var obj2Keys = Object.keys(obj2);
+
+    // if (JSON.stringify(obj1Keys) === JSON.stringify(obj2Keys)) {
+    //     return true;
+    // }
+    // else {
+    //     return false
+    // };
+
+    return Object.keys(obj1).every((key) => obj2[key])
+}                    
+
+// console.log(objComparo(object1, object2));
+
+
+                     

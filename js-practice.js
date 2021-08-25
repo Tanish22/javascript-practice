@@ -13,7 +13,7 @@ const reverseString = (str) => {
 
         // return a factorial
 
-const factorial = (num) => {
+const factorial = (num) => { 
     if(num === 0 || num === 1){
         return "Number must be a Positive Number !!"
     }
@@ -21,7 +21,7 @@ const factorial = (num) => {
         let fact = 1; 
         
         for(let i = 1; i <= num; i++){
-        fact *= i; 
+            fact *= i; 
         } 
         console.log(`Factorial of ${num} is ${fact}`);
     }
@@ -77,7 +77,7 @@ const TitleCase = (str) => {
     console.log(capsFirstLetter);
 }             
 
-// TitleCase("this is title case")
+TitleCase("this is title case")
 
 
         // largest num in array [1d array]
@@ -324,4 +324,4 @@ const sumAllNosInRange = (arr) => {
     return sum;
 }                
 
-console.log(sumAllNosInRange([10, 5]));
+// console.log(sumAllNosInRange([10, 5]));
